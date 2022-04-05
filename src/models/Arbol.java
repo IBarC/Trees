@@ -16,10 +16,14 @@ public class Arbol {
 		this.raiz.postOrden(raiz, 0);
 	}
 	
-//	public Nodo buscar(String valor) {
-//		return this.raiz.buscar(valor);
-//	}
-//	
+	public Nodo buscarNodo(String valor) {
+		return this.raiz.buscarNodo(valor);
+	}
+
+	public Nodo insertarNodo(Nodo padre, String valor) {
+		return this.raiz.insertarNodo(padre, valor);
+	}
+	
 //	public int profundidad(String valor) {
 //		return this.raiz.profundidad(valor, 0);
 //	}

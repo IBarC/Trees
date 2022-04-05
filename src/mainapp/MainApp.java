@@ -36,7 +36,11 @@ public class MainApp {
 		arbol.preOrden();
 		System.out.println();
 		arbol.postOrden();
-//		System.out.println(arbol.buscar("I"));
+		System.out.println();
+		System.out.println(arbol.buscarNodo("hola"));
+		System.out.println(arbol.buscarNodo("ternera"));
+		System.out.println(arbol.insertarNodo(cuatro, "patata"));
+		arbol.preOrden();
 //		System.out.println(arbol.profundidad("I"));
 	}
 }

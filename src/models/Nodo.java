@@ -39,23 +39,32 @@ public class Nodo {
 		System.out.print(n.valor + "/");
 	}
 
-//	public Nodo buscar(String valor) {
-//		if (this.valor.equals(valor)) {
-//			return this;
-//		}
-//		if (tieneHijosIzq(this)) {
-//			var n = this.izq.buscar(valor);
-//			if (n != null)
-//				return n;
-//		}
-//		if (tieneHijosDcha(this)) {
-//			var n = this.dcha.buscar(valor);
-//			if (n != null)
-//				return n;
-//		}
-//		return null;
-//	}
-//
+	public Nodo buscarNodo(String valor) {
+		if (this.valor.equals(valor)) {
+			return this;
+		}
+		
+		for(int i = 0; i<this.nodos.size(); i++) {
+			if(tieneHijos(this)) {
+				var n = this.nodos.get(i).buscarNodo(valor);
+				if(n != null) 
+					return n;
+			}
+		}
+		
+		return null;
+	}
+
+	public Nodo insertarNodo(Nodo padre, String valor) {
+		if(padre.buscarNodo(padre.valor)!=null) {
+			var n = new Nodo(valor);
+			padre.nodos.add(n);
+			return n;
+		}
+		return null;
+		
+	}
+	
 //	public int profundidad(String valor, int prof) {
 //		//Buscar si yo soy ese nodo
 //		if (this.valor.equals(valor)) {
